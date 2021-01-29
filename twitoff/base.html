@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <title>TwitOff - {{ title }}</title>
     <link rel="stylesheet" href="https://unpkg.com/picnic"/>
   </head>
-
   <body>
     <nav>
       <a href="/" class="brand"><span>TwitOff!</span></a>
@@ -19,11 +17,16 @@
     </nav>
     <article class="flex two" style="padding: 3em 1em;">
       {% block content %}
-
-      
+      <div>
+        <h2>Users</h2>
+        {% for user in users %}
+        <a href="/user/{{ user.name }}"><span>
+          {{ user.name }}
+        </span></a>
+        {% endfor %}
+      </div>
       {% endblock %}
     </article>
     <!-- <script src="https://cdn.jsdelivr.net/npm/umbrellajs"/> -->
   </body>
-
 </html>
